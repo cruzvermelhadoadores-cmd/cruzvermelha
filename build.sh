@@ -3,18 +3,17 @@
 # Install dependencies
 npm install
 
-# Build the client
+# Build client (vai gerar em dist/public)
 npm run build
 
-# Clean and prepare dist
-rm -rf dist api
-mkdir -p dist/public api
+# Clean api folder
+# rm -rf api
+# mkdir -p api
 
-# Copy client build
-cp -r client/dist/* dist/public/
+# Copiar o server build para api/ (Vercel exige api/)
+cp dist/index.js api/index.js
 
-# Copy server and shared
-cp -r server/* api/
+# Garantir que os shared e configs estão no dist
 cp -r shared dist/
 cp package.json dist/
 cp package-lock.json dist/
