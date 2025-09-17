@@ -1,0 +1,127 @@
+# Fluxo do Aplicativo – Cruz Vermelha em Angola
+
+---
+
+## Acesso e Login
+
+* **Primeiro acesso:**
+
+  * Usuário recebe **senha provisória** por e-mail.
+  * Sistema solicita criação de **nova senha**.
+  * Após redefinição, usuário é direcionado ao **Perfil**.
+
+* **Acessos seguintes:**
+
+  * Login direciona diretamente para a **Home**.
+
+---
+
+## Tela Home
+
+Três caminhos principais:
+
+1. **Pesquisar Doadores**
+
+   * Acesso à **Lista de Doadores**.
+   * Seleção de um doador → abre o **Perfil do Doador**.
+   * No perfil → opção de **Adicionar nova doação**.
+
+2. **Relatórios (somente Admin)**
+
+   * Acesso às seções:
+
+     * **Minhas listas**
+     * **Relatórios gerais**
+
+3. **Cadastrar**
+
+   * Formulário de **Cadastro de Doadores**.
+   * Se **Admin**:
+
+     * **Cadastrar Líderes** → inserir nome + e-mail → envio de **senha provisória** por e-mail.
+     * **Editar Líderes**
+
+---
+
+## Permissões
+
+* Apenas **Admin** pode:
+
+  * **Apagar doadores**
+  * **Editar doadores**
+  * **Cadastrar/Editar líderes**
+
+---
+
+## Formulário de Cadastro de Doadores
+
+### 1. Identificação do Doador
+
+* **Com QR Code do BI ou manual:**
+
+  * Nº de Identificação (BI)
+  * Nome completo
+  * Data de nascimento → **idade calculada automaticamente**
+  * Sexo (M/F)
+  * Município
+
+* **Preenchimento manual (extras):**
+
+  * Nº (cadastro interno)
+  * Bairro
+  * Contacto (telefone/email)
+  * Cargo/Função
+  * Departamento/Setor → opções:
+
+    * Delegação Provincial
+    * Programa e Serviços
+    * Juventude e Voluntariado
+    * Outro
+
+### 2. Informação Médica e de Doação
+
+* Grupo sanguíneo → **O, A, B, AB**
+* Fator Rh → **Positivo / Negativo**
+* Histórico de doações → **Sim / Não**
+* Nº de doações anteriores
+* Última doação (data)
+* Restrições médicas conhecidas
+* Apto para doar → **Sim / Não**
+
+### 3. Disponibilidade
+
+* Disponível para futuras doações → **Sim / Não**
+* Melhor forma de contato → chamada / SMS / email / WhatsApp
+* Observações adicionais (campo livre)
+
+---
+
+## Identidade Visual
+
+* **Cores:** branco e vermelho
+* **Logo oficial:** ![Logo](https://i.imgur.com/uUfCICT.jpg)
+* **Tipo de app:** PWA (Progressive Web App)
+
+---
+
+## Tecnologias
+
+* **Banco de dados:** MongoDB
+* **Framework:** Next.js
+
+---
+
+## URLs para Envio de E-mails
+
+* **Enviar senha provisória**
+
+GET https://script.google.com/macros/s/AKfycbzUXA3hswDOAbXyPyOf00gYEP_9nswtXYP3Zg4U4GOfaVai-th9yr3rmfatUwNSqiJnYQ/exec?tipo=senha&email=exemplo@gmail.com&user=Teste&senhaprovisoria=abc123
+
+* **Enviar boas-vindas**
+
+GET https://script.google.com/macros/s/AKfycbzUXA3hswDOAbXyPyOf00gYEP_9nswtXYP3Zg4U4GOfaVai-th9yr3rmfatUwNSqiJnYQ/exec?tipo=bemvindo&email=exemplo@gmail.com&user=Teste
+
+* **Recuperar senha**
+
+GET https://script.google.com/macros/s/AKfycbzUXA3hswDOAbXyPyOf00gYEP_9nswtXYP3Zg4U4GOfaVai-th9yr3rmfatUwNSqiJnYQ/exec?tipo=recuperar&email=exemplo@gmail.com&user=Teste
+
