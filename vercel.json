@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["server/**", "shared/**", "dist/**"]
-      }
+  "functions": {
+    "server/index.js": {
+      "runtime": "@vercel/node",
+      "includeFiles": [
+        "dist/**",
+        "server/**",
+        "shared/**"
+      ]
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
