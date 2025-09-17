@@ -66,14 +66,14 @@ export default function Login() {
         </CardHeader>
 
         <CardContent>
-          {process.env.NODE_ENV === 'development' && (
+          {/*{process.env.NODE_ENV === 'development' && (
             <Alert className="mb-4">
               <AlertCircle className="h-4 w-4" />
               <AlertDescription>
                 <strong>Desenvolvimento:</strong> Use "admin" / "admin123" para acesso administrativo
               </AlertDescription>
             </Alert>
-          )}
+          )}*/}
           
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             {error && (
