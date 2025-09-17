@@ -3,11 +3,7 @@
   "functions": {
     "server/index.js": {
       "runtime": "@vercel/node",
-      "includeFiles": [
-        "dist/**",
-        "server/**",
-        "shared/**"
-      ]
+      "includeFiles": "dist/**"
     }
   },
   "routes": [
