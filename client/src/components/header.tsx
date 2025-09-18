@@ -35,9 +35,14 @@ export default function Header() {
                 className="h-10 w-10 object-contain"
               />
               <div>
-                <h1 className="text-base sm:text-lg font-semibold text-foreground">
-                  Cruz Vermelha
-                </h1>
+                <div className="flex space-x-2">
+                  <h1 className="text-base sm:text-lg font-semibold text-foreground hidden sm:block">
+                    Cruz
+                  </h1>
+                  <h1 className="text-base sm:text-lg font-semibold text-foreground">
+                    Vermelha
+                  </h1>
+                </div>
                 <p className="text-xs text-muted-foreground hidden sm:block">
                   Sistema de Doadores
                 </p>
@@ -47,7 +52,7 @@ export default function Header() {
 
           <div className="flex items-center space-x-1 ">
             <span
-              className="text-sm text-muted-foreground  hidden sm:block"
+              className="text-sm text-muted-foreground hidden sm:block"
               data-testid="text-user-name"
             >
               {user?.name}
