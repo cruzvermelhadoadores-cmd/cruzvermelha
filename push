@@ -1,0 +1,7 @@
+#!/bin/bash
+export VERSION_COMMIT="v1.0.0-$(git rev-parse --short HEAD)"
+if [[ -z "$1" ]]; then
+  git add . ; git commit -m "not found commit $VERSION_COMMIT" ; git push
+  exit 1
+fi
+git add . ; git commit -m "$1" ; git push
