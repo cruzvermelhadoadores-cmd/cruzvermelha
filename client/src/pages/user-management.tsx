@@ -125,7 +125,7 @@ export default function UserManagement() {
               <Dialog open={showLeaderForm} onOpenChange={setShowLeaderForm}>
                 <DialogTrigger asChild>
                   <Button data-testid="button-add-user">
-                    <UserPlus className="w-4 h-4 mr-1" />
+                    <UserPlus className="w-4 h-4" />
                     <h1 className="hidden sm:block">
                     Adicionar Utilizador
                     </h1>

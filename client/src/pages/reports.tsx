@@ -520,7 +520,7 @@ export default function Reports() {
                   </div>
                   <Button onClick={() => setShowLeaderForm(true)} data-testid="button-add-leader">
                     <UserPlus className="w-4 h-4 mr-2" />
-                    Adicionar Novo Líder
+                     <h1 className="hidden sm:block">Adicionar Novo Líder</h1>
                   </Button>
                 </CardTitle>
               </CardHeader>

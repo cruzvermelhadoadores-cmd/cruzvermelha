@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -20,6 +20,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 
 export default function Login() {
+  // ==== new ==== error =====
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstall, setShowInstall] = useState(false);
 
@@ -33,6 +34,7 @@ export default function Login() {
     window.addEventListener('beforeinstallprompt', handler);
     return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
+  // ===============================
   const [error, setError] = useState<string>("");
   const [showProvinceSelect, setShowProvinceSelect] = useState<boolean>(false);
   const login = useLogin();
