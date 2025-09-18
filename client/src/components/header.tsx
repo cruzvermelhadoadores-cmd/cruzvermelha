@@ -45,7 +45,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-1 ">
             <span
               className="text-sm text-muted-foreground  hidden sm:block"
               data-testid="text-user-name"
@@ -62,15 +62,15 @@ export default function Header() {
                 <>
                   <Link
                     to="/reports"
-                    className="text-foreground/80 hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                    className="text-foreground/80 hover:text-foreground px-2 py-1 rounded-md text-sm font-medium transition-colors"
                   >
                     Relatórios
                   </Link>
                   <Link
                     to="/users"
-                    className="text-foreground/80 hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                    className="text-foreground/80 hover:text-foreground px-2 py-1 rounded-md text-sm font-medium transition-colors"
                   >
-                    Utilizadores
+                    Usuários
                   </Link>
                 </>
               )}
