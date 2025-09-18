@@ -53,7 +53,7 @@ export default function Header() {
               {user?.name}
             </span>
             <span
-              className="inline-flex items-center px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
+              className="inline-flex items-center px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full  hidden sm:block"
               data-testid="text-user-role"
             >
               {user?.role === "admin" ? "Admin" : "lider"}
