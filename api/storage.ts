@@ -227,7 +227,7 @@ export class MongoStorage implements IStorage {
   private async connect() {
     try {
       const mongoUrl = process.env.MONGODB_URL;
-      console.log(`==== DADOS DO API === "KKKK"`)
+      console.log(`==== DADOS DO ESTE NAO ESTA A FUNCIONAR PODE DESCARTAR === "KKKK"`)
       if (!mongoUrl) {
         throw new Error("MONGODB_URL environment variable is not set");
       }

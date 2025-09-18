@@ -47,7 +47,7 @@ export default function Header() {
 
           <div className="flex items-center space-x-1">
             <span
-              className="text-sm text-muted-foreground"
+              className="text-sm text-muted-foreground  hidden sm:block"
               data-testid="text-user-name"
             >
               {user?.name}
