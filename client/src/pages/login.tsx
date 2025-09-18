@@ -82,7 +82,7 @@ export default function Login() {
         </CardHeader>
 
         <CardContent>
-          {showInstall && (
+          {/* {showInstall && (
             <Button
               className="w-full mb-2"
               onClick={async () => {
@@ -96,7 +96,7 @@ export default function Login() {
             >
               Instalar aplicativo para uso offline
             </Button>
-          )}
+          )} */}
           
           
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
