@@ -40,7 +40,8 @@ export default function Login() {
   const login = useLogin();
 
   // Fetch provinces for selection
-  const { data: provinces = [] } = useQuery({
+  type Province = { id: string; name: string };
+  const { data: provinces = [] } = useQuery<Province[]>({
     queryKey: ["/api/provinces"],
     staleTime: 5 * 60 * 1000, // 5 minutes
   });

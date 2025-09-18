@@ -562,7 +562,6 @@ export default function Reports() {
                                     </DialogHeader>
                                     <LeaderForm
                                       initialData={leader}
-                                      leaderId={leader.id}
                                       onSuccess={() => {
                                         leadersQuery.refetch();
                                       }}
