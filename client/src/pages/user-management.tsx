@@ -120,13 +120,15 @@ export default function UserManagement() {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5" />
-                <CardTitle>Utilizadores do Sistema</CardTitle>
+                <CardTitle>Utilizadores</CardTitle>
               </div>
               <Dialog open={showLeaderForm} onOpenChange={setShowLeaderForm}>
                 <DialogTrigger asChild>
                   <Button data-testid="button-add-user">
-                    <UserPlus className="w-4 h-4 mr-2" />
+                    <UserPlus className="w-4 h-4 mr-1" />
+                    <h1 className="hidden sm:block">
                     Adicionar Utilizador
+                    </h1>
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
