@@ -2,6 +2,9 @@
 export VERSION_COMMIT="v1.0.0-$(git rev-parse --short HEAD)"
 if [[ -z "$1" ]]; then
   git add . ; git commit -m "not found commit $VERSION_COMMIT" ; git push
+    echo "No commit message provided. Using default message."
+    echo
+    echo "$VERSION_COMMIT"
   exit 1
 fi
 git add . ; git commit -m "$1" ; git push

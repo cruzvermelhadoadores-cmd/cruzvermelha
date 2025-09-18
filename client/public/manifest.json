@@ -1,0 +1,21 @@
+{
+  "name": "Cruz Vermelha Angola",
+  "short_name": "CVA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d90429",
+  "description": "Sistema de Gestão de Doadores da Cruz Vermelha Angola.",
+  "icons": [
+    {
+      "src": "/public/imr.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/public/imr.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
