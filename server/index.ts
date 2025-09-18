@@ -8,6 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Configure session middleware
+
+app.get("/api/hello", (req, res) => {
+  res.json({ msg: "Olá do backend!" });
+});
+
 app.use(session({
   secret: process.env.SESSION_SECRET || "cruz-vermelha-angola-secret",
   resave: false,
