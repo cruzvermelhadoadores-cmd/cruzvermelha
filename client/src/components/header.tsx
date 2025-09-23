@@ -34,6 +34,7 @@ export default function Header() {
                 alt="Cruz Vermelha Angola"
                 className="h-10 w-10 object-contain"
               />
+              
               <div>
                 <div className="flex space-x-2">
                   <h1 className="text-base sm:text-lg font-semibold text-foreground hidden sm:block">
@@ -50,7 +51,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-1 ">
+          <div className="flex items-center space-x-1">
             <span
               className="text-sm text-muted-foreground hidden sm:block"
               data-testid="text-user-name"
@@ -58,7 +59,7 @@ export default function Header() {
               {user?.name}
             </span>
             <span
-              className="inline-flex items-center py-1 text-xs font-medium bg-primary/10 text-primary rounded-full  hidden sm:block"
+              className="inline-flex items-center px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full hidden sm:block"
               data-testid="text-user-role"
             >
               {user?.role === "admin" ? "Admin" : "lider"}
@@ -67,17 +68,18 @@ export default function Header() {
                 <>
                   <Link
                     to="/reports"
-                    className="text-foreground/80 hover:text-foreground px-2 py-1 rounded-md text-sm font-medium transition-colors"
+                    className="text-foreground/80 hover:text-foreground py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     Relatórios
                   </Link>
                   <Link
                     to="/users"
-                    className="text-foreground/80 hover:text-foreground px-2 py-1 rounded-md text-sm font-medium transition-colors"
+                    className="text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     Usuários
                   </Link>
                 </>
+      
               )}
             <Button
               variant="ghost"

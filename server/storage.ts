@@ -227,7 +227,6 @@ export class MongoStorage implements IStorage {
   private async connect() {
     try {
       const mongoUrl = process.env.MONGODB_URL;
-      console.log(`==== DADOS DO SERVER === "KKKK"`)
       if (!mongoUrl) {
         throw new Error("MONGODB_URL environment variable is not set");
       }
@@ -286,7 +285,6 @@ export class MongoStorage implements IStorage {
       const hashedPassword = await bcrypt.hash(adminPassword, 10);
       
       if (!existingAdmin) {
-        console.log(`==== DADOS DO SERVER === "KKKK"`)
         console.log(`\n*** CREATING DEFAULT ADMIN ***`);
         console.log(`Username: admin`);
         console.log(`Password: ${adminPassword}`);

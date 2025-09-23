@@ -826,8 +826,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     }
 
-    const arrayBuffer = await workbook.xlsx.writeBuffer();
-    return Buffer.from(arrayBuffer);
+    return await workbook.xlsx.writeBuffer() as Buffer;
   }
 
   // Export routes
@@ -928,10 +927,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error('Export donations error:', error);
       res.status(400).json({ message: "Parâmetros inválidos" });
     }
-  });
-
-  app.get('*', (req, res) => {
-    res.redirect('/');
   });
 
   app.get("/api/export/reports", requireAuth, async (req, res) => {

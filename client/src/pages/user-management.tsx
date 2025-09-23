@@ -35,11 +35,11 @@ export default function UserManagement() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
-  const { data: users = [], isLoading: usersLoading } = useQuery<User[]>({
+  const { data: users = [], isLoading: usersLoading } = useQuery({
     queryKey: ["/api/leaders"],
   });
 
-  const { data: provinces = [] } = useQuery<Province[]>({
+  const { data: provinces = [] } = useQuery({
     queryKey: ["/api/provinces"],
   });
 
@@ -104,7 +104,7 @@ export default function UserManagement() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+    
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-foreground mb-2">

@@ -8,7 +8,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Configure session middleware
-
 app.use(session({
   secret: process.env.SESSION_SECRET || "cruz-vermelha-angola-secret",
   resave: false,

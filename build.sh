@@ -1,19 +1,15 @@
+
 #!/bin/bash
 
 # Install dependencies
 npm install
 
-# Build client (vai gerar em dist/public)
+# Build the client
 npm run build
 
-# Clean api folder
-# rm -rf api
-# mkdir -p api
-
-# Copiar o server build para api/ (Vercel exige api/)
-cp dist/index.js api/index.js
-
-# Garantir que os shared e configs estão no dist
+# Copy server files to dist for deployment
+mkdir -p dist
+cp -r server dist/
 cp -r shared dist/
 cp package.json dist/
 cp package-lock.json dist/

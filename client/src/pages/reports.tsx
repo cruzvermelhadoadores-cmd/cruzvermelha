@@ -519,8 +519,10 @@ export default function Reports() {
                   <div className="ml-auto">
                   </div>
                   <Button onClick={() => setShowLeaderForm(true)} data-testid="button-add-leader">
-                    <UserPlus className="w-4 h-4 mr-2" />
-                     <h1 className="hidden sm:block">Adicionar Novo Líder</h1>
+                    <UserPlus className="w-4 h-4" />
+                    <h1 className=" hidden sm:block">
+                      Adicionar Novo Líder
+                    </h1>
                   </Button>
                 </CardTitle>
               </CardHeader>
@@ -562,6 +564,7 @@ export default function Reports() {
                                     </DialogHeader>
                                     <LeaderForm
                                       initialData={leader}
+                                      leaderId={leader.id}
                                       onSuccess={() => {
                                         leadersQuery.refetch();
                                       }}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -18,30 +18,15 @@ import { useLogin } from "@/lib/auth";
 import { loginSchema, type LoginData } from "@shared/schema";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
+import PWAInstallButton from "@/components/pwa-install-button";
 
 export default function Login() {
-  // ==== new ==== error =====
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-  const [showInstall, setShowInstall] = useState(false);
-
-  // Detecta o evento de instalação do PWA
-  React.useEffect(() => {
-    const handler = (e: any) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setShowInstall(true);
-    };
-    window.addEventListener('beforeinstallprompt', handler);
-    return () => window.removeEventListener('beforeinstallprompt', handler);
-  }, []);
-  // ===============================
   const [error, setError] = useState<string>("");
   const [showProvinceSelect, setShowProvinceSelect] = useState<boolean>(false);
   const login = useLogin();
 
   // Fetch provinces for selection
-  type Province = { id: string; name: string };
-  const { data: provinces = [] } = useQuery<Province[]>({
+  const { data: provinces = [] } = useQuery({
     queryKey: ["/api/provinces"],
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
@@ -82,22 +67,14 @@ export default function Login() {
         </CardHeader>
 
         <CardContent>
-          {/* {showInstall && (
-            <Button
-              className="w-full mb-2"
-              onClick={async () => {
-                if (deferredPrompt) {
-                  deferredPrompt.prompt();
-                  const choiceResult = await deferredPrompt.userChoice;
-                  setShowInstall(false);
-                  setDeferredPrompt(null);
-                }
-              }}
-            >
-              Instalar aplicativo para uso offline
-            </Button>
+          {/* {process.env.NODE_ENV === 'development' && (
+            <Alert className="mb-4">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>
+                <strong>Desenvolvimento:</strong> Use "admin" / "admin123" para acesso administrativo
+              </AlertDescription>
+            </Alert>
           )} */}
-          
           
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             {error && (
@@ -189,6 +166,8 @@ export default function Login() {
               {login.isPending ? "A entrar..." : "Entrar"}
             </Button>
           </form>
+
+          <PWAInstallButton />
         </CardContent>
       </Card>
     </div>

@@ -1,21 +1,27 @@
+
 {
-  "name": "Cruz Vermelha Angola",
-  "short_name": "CVA",
+  "name": "Cruz Vermelha Angola - Sistema de Doadores",
+  "short_name": "Cruz Vermelha",
+  "description": "Sistema de Gestão de Doadores da Cruz Vermelha Angola",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#d90429",
-  "description": "Sistema de Gestão de Doadores da Cruz Vermelha Angola.",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/public/imr.png",
+      "src": "https://imgur.com/V4f4OIL.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     },
     {
-      "src": "/public/imr.png",
+      "src": "https://imgur.com/V4f4OIL.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["health", "medical", "productivity"],
+  "lang": "pt-PT"
 }
